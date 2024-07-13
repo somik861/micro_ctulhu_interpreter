@@ -1,4 +1,5 @@
 from src.common import Operation, Program, ProgramState
+import tqdm
 
 
 def interpret(program: Program, init_state: ProgramState | None = None) -> ProgramState:
@@ -6,7 +7,7 @@ def interpret(program: Program, init_state: ProgramState | None = None) -> Progr
         init_state = ProgramState()
     state = init_state  # just rename for more readability
 
-    for instruction in program:
+    for instruction in tqdm.tqdm(program, desc='Executing'):
         ops = instruction.operands
         match instruction.operation:
             case Operation.Move:

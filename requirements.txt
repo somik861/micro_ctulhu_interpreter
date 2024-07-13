@@ -1,1 +1,2 @@
-dataclass_json
+dataclasses_json
+tqdm
