@@ -8,6 +8,7 @@ class Operation(Enum):
     Create = 'create'
     Add = 'add'
     Drop = 'drop'
+    Dup = 'dup'
 
 
 @dataclass

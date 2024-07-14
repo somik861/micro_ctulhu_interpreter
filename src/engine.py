@@ -20,6 +20,8 @@ def interpret(program: Program, init_state: ProgramState | None = None) -> Progr
                 )
             case Operation.Drop:
                 state.stacks[ops[0]].pop()
+            case Operation.Dup:
+                state.stacks[ops[1]].append(state.stacks[ops[0]][-1])
             case _:
                 assert False
 
