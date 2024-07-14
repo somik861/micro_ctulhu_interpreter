@@ -29,7 +29,7 @@ def main() -> int:
         open(args.save_result, 'w', encoding='utf-8').write(result.to_json(indent=4))
 
     for k, v in result.stacks.items():
-        print(f'{k}: |{' '.join(v)}>')
+        print(f'{k}: |{' '.join(map(lambda x: str(x), v))}>')
 
     return 0
 
