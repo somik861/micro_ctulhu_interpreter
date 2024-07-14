@@ -21,7 +21,7 @@ Program = list[Instruction]
 
 @dataclass
 class ProgramState(DataClassJsonMixin):
-    stacks: dict[int, list[int]] = field(default=dict)
+    stacks: dict[int, list[int]] = field(default_factory=dict)
 
     def __post_init__(self):
         for i in range(6):

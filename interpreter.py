@@ -28,7 +28,7 @@ def main() -> int:
     if args.save_result is not None:
         open(args.save_result, 'w', encoding='utf-8').write(result.to_json(indent=4))
 
-    for k, v in result.stacks:
+    for k, v in result.stacks.items():
         print(f'{k}: |{' '.join(v)}>')
 
     return 0
