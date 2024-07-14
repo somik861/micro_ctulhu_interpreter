@@ -13,9 +13,9 @@ def parser_source_lines(source_lines: list[str]) -> Program:
         line = line.strip()
         if line == '':
             continue
-        parts = line.split()
-        instr = Instruction(Operation(parts[0]))
-        for part in parts[1:]:
+        parts = line.split('_')
+        instr = Instruction(Operation(parts[1]))
+        for part in parts[2:]:
             try:
                 instr.operands.append(int(part))
             except ValueError:
